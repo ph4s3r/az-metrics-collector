@@ -1,0 +1,15 @@
+[Unit]
+Description=Azure Metrics Collector powered by Prometheus
+Documentation=https://
+After=multi-user.target network.target syslog.target
+
+[Service]
+User=0000
+Type=idle
+Environment="PYTHONUNBUFFERED=1"
+WorkingDirectory=/opt/azmetrics
+ExecStart=/usr/bin/python3 metrics_server.py
+Restart=no
+
+[Install]
+WantedBy=multi-user.target

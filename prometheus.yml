@@ -1,0 +1,4 @@
+scrape_configs:
+  - job_name: 'azure_tenant_metrics'
+    static_configs:
+      - targets: ['http://<hostname>:<port>']
